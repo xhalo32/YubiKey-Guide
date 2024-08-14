@@ -347,7 +347,7 @@ This guide recommends a two year expiration for Subkeys to balance security and 
 
 When Subkeys expire, they may still be used to decrypt with GnuPG and authenticate with SSH, however they can **not** be used to encrypt nor sign new messages.
 
-Subkeys must be renewed or rotated using the Certify key - see [Updating Subkeys](#updating-subkeys).
+Subkeys must be renewed or rotated using the Certify key - see [Renew Subkeys](#renew-subkeys).
 
 Set the expiration date to two years:
 
