@@ -278,5 +278,19 @@
     nixosConfigurations.yubikeyLive.aarch64-linux = mkSystem "aarch64-linux";
     formatter.x86_64-linux = (import nixpkgs {system = "x86_64-linux";}).alejandra;
     formatter.aarch64-linux = (import nixpkgs {system = "aarch64-linux";}).alejandra;
+    devShells.x86_64-linux.default = let
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      fontsConf = pkgs.makeFontsConf {
+          fontDirectories = with pkgs; [        victor-mono
+        fira-sans
+          ];
+        };
+    in pkgs.mkShell {
+      name = "flake shell";
+      FONTCONFIG_FILE = fontsConf;
+      packages = with pkgs; [
+        typst
+      ];
+    };
   };
 }
