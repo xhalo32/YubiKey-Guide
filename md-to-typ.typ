@@ -15,7 +15,7 @@
 Convert inline shell code to add highlighting
 
 ```
-'`(gpg|pip) ([^`]+)`' '```bash $1 $2```'
+'`(gpg|gpgconf|pip|ykman|pkill|gpg-connect-agent|ssh-add|export|sudo|pass) ([^`]+)`' '```bash $1 $2```'
 ```
 
 == Ordered lists
@@ -43,11 +43,19 @@ TODO fix link references
 == Admonitions
 
 ```
-"^\*Note\*\w+(.*)" "#note[$1]"
+"^\*Note\*\s+(.*)" '#note[$1]'
 ```
 
 ```
-"^\*Warning\*\w+(.*)" "#warning[$1]"
+"^\*Warning\*s+(.*)" '#warning[$1]'
+```
+
+```
+"^\*Tip\*\s+(.*)" '#tip[$1]'
+```
+
+```
+"^\*Important\*\s+(.*)" '#important[$1]'
 ```
 
 == Checkboxes
@@ -55,3 +63,7 @@ TODO fix link references
 ```
 
 ```
+
+== Tables
+
+Probably not possible with regex
